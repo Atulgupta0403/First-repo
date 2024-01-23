@@ -1,21 +1,21 @@
-.box{
+/* .box{
     left: 200px;
     position: relative;
     animation: rotor 2s ease 0s infinite alternate;
-    /* transition: translateX(-204px) 2s steps(10) 0;  */
-}
-.two{
+    transition: translateX(-204px) 2s steps(10) 0; 
+} */
+/* .two{
     bottom: 100px;
     position: relative;
     left: 95px;
-}
+} */
 
 /* .box:hover{
     transition: all 30s ease 0;
     animation: rotor 5s ease 0s 5 alternate;
     transform: translateX(-204px);
 } */
-@keyframes rotor {
+/* @keyframes rotor {
     from{
         transform: rotateY(0deg);
     }
@@ -23,5 +23,19 @@
         transform: rotateY(180deg);
     }
     
-}
+} */
 
+
+
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border: 2px solid black;
+}
+.content{
+    color: red;
+}
+.newclass{
+    background-color: yellow;
+}

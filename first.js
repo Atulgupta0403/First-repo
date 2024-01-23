@@ -125,8 +125,39 @@
 // }
 
 
-let arr=[23,34,6,23,67,324,6];
-let res=arr.reduce((prev,curr)=>{
-    return (prev>curr)? prev:curr 
-})
-console.log(res);
+// let arr=[23,34,6,23,67,324,6];
+// let res=arr.reduce((prev,curr)=>{
+//     return (prev>curr)? prev:curr 
+// })
+// console.log(res);
+
+// let div=document.querySelector("div");
+// // console.dir(div);
+
+// div.style.backgroundColor="green";
+// div.style.textAlign="center";
+// div.style.fontSize="30px";
+
+
+// let element= document.createElement("button");
+// element.innerText="click me";
+// console.log(element);
+// let div=document.querySelector(".box");
+// div.before(element);
+// div.append(element);
+// div.prepend(element);
+// div.after(element);
+
+let btn=document.createElement("button");
+btn.innerText="click me!";
+let b=document.querySelector("body");
+b.prepend(btn);
+
+btn.style.backgroundColor="red";
+btn.style.color="blue";
+btn.style.border="2px solid black";
+
+
+
+let para=document.querySelector("p");
+para.classList.add("newclass");
