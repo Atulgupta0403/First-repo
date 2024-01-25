@@ -148,16 +148,60 @@
 // div.prepend(element);
 // div.after(element);
 
-let btn=document.createElement("button");
-btn.innerText="click me!";
-let b=document.querySelector("body");
-b.prepend(btn);
+// let btn=document.createElement("button");
+// btn.innerText="click me!";
+// let b=document.querySelector("body");
+// b.prepend(btn);
 
-btn.style.backgroundColor="red";
-btn.style.color="blue";
-btn.style.border="2px solid black";
+// btn.style.backgroundColor="red";
+// btn.style.color="blue";
+// btn.style.border="2px solid black";
 
 
 
-let para=document.querySelector("p");
-para.classList.add("newclass");
+// let para=document.querySelector("p");
+// para.classList.add("newclass");
+
+
+// let b=document.querySelector(".btn");
+// b.onclick=()=> {
+//     console.log("clicked");
+// }
+// let d=document.querySelector(".box1");
+// d.onmouseover = (e) => {
+//     console.log(e.target);
+// }
+
+
+// let d2=document.querySelector(".box2");
+// d2.addEventListener("click", () =>{
+//     console.log("box2 clicked-handler1 ");
+// });
+// let handler2=() => {
+//     console.log("box2 clicked-handler2 ")
+// }
+// d2.addEventListener("click",handler2);
+// d2.addEventListener("click", () =>{
+//     console.log("box2 clicked-handler3 ");
+// });
+// d2.removeEventListener("click",handler2);
+
+
+let btn=document.querySelector("button");
+let body=document.querySelector("body");
+let currmode="light";
+btn.addEventListener("click", () =>{
+    if (currmode==="light"){
+        console.log(currmode);
+        body.classList.add("light");
+        body.classList.remove("dark");
+        currmode="dark";
+    }
+    else{
+        console.log(currmode);
+        body.classList.add("dark");
+        body.classList.remove("light");
+        currmode="light";
+    }
+
+});

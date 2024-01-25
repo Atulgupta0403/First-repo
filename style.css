@@ -27,15 +27,25 @@
 
 
 
-.box{
+.box1{
     height: 100px;
     width: 100px;
     background-color: aqua;
     border: 2px solid black;
 }
-.content{
-    color: red;
+.box2{
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    background-color: red;
+    border: 2px solid black;
 }
-.newclass{
-    background-color: yellow;
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.light {
+    background-color: white;
+    color: black;
 }
