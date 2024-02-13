@@ -1,51 +1,85 @@
-/* .box{
-    left: 200px;
-    position: relative;
-    animation: rotor 2s ease 0s infinite alternate;
-    transition: translateX(-204px) 2s steps(10) 0; 
-} */
-/* .two{
-    bottom: 100px;
-    position: relative;
-    left: 95px;
-} */
-
-/* .box:hover{
-    transition: all 30s ease 0;
-    animation: rotor 5s ease 0s 5 alternate;
-    transform: translateX(-204px);
-} */
-/* @keyframes rotor {
-    from{
-        transform: rotateY(0deg);
-    }
-    to{
-        transform: rotateY(180deg);
-    }
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: yellow;
+}
+body{
+    background-color: #283618;
+    text-align: center;
+}
+.msg-container{
     
-} */
-
-
-
-.box1{
-    height: 100px;
-    width: 100px;
-    background-color: aqua;
-    border: 2px solid black;
+    margin-top: 40px;
+    
 }
-.box2{
-    height: 100px;
-    width: 100px;
-    margin-top: 20px;
-    background-color: red;
-    border: 2px solid black;
+.msg-container p{
+    display: inline;
+    background-color: #7a9c53;
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 9px;
+    width: 40px;
 }
-.dark {
+.hide{
+    display: none;
+}
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5vmin;
+}
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(251, 240, 21, 0.5);
+    font-size: 60px;
+    color: rgb(45, 123, 135);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reset{
     background-color: black;
     color: white;
+    height: 40px;
+    /* width: 100px; */
+    border-radius: 10px;
+    border: none;
+    font-size: larger;
+    display: inline;
+    margin-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
 }
-
-.light {
-    background-color: white;
-    color: black;
+.newgame{
+    height: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    font-size: larger;
+    display: inline;
+    margin-left: 20px;
+    margin-top: 40px;
+    padding: 10px;
+}
+.rene{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

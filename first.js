@@ -1,207 +1,91 @@
-// const student={
-//     name : "atul",
-//     age : 19,
-//     marks : 55,
-//     isPass : true
-// }
-// student.age=student["age"]+1;
-// student.name="rohan";
-// console.log(student.age); 
-// console.log(student.name );
-// const profile={
-//     name : 'sradhakhapda',
-//     isFollow : false,
-//     followers : 123,
-//     following : 123
-// }
-// console.log(profile); 
-// console.log(typeof profile.isFollow); 
-
-
-// let n =10;
-// let n =10;
-// if (n%2==0){
-//     console.log("even number ");
-// }
-// else{
-//     console.log("odd number ");
-// }
-        
-// let mode="blue";
-// mode=="dark"?console.log("black"):console.log("white");
-
-// let x = prompt("Enter any number ");
-// if (x%5===0){
-//     console.log(x,"multiple of 5 ");
-// }else{
-//     console.log(x,"not multiple of 5 ");
-// }
-// for (let i=0;i<5;i++){
-//     console.log("hello ")
-// }
-// x=prompt("enter any number :");
-// console.log(x);
-// let sum=0;
-// let n=prompt("enter any number:");
-// for (let i=1;i<=n;i++){
-//     sum=sum+i;
-// }
-// console.log(sum);
-
-// let str="atul";
-// for (let i of str){
-//     console.log(i);
-// }
-
-// let student={
-//     name:"atul",
-//     age:19,
-//     cgpa:9
-// };
-// for (let i in student){
-//     console.log(i ,student[i]);
-// }
-// console.log("all even number ")
-// for (let i=0;i<=100;i++){
-//     if (i%2==0){
-//         console.log(i);
-//     }
-// }
-
-// game 
-
-// let game=25;
-// let x=prompt("enter any number ");
-// while (x!=game){
-//     x=prompt("enter any number ");
-// }
-// console.log("you enter right number ");
-// console.log(x);
-// let str="atul ";
-// str[0]="b";
-// console.log(str);
-
-// let name = prompt("Enter your full name :");
-// // x =name.length;
-// // console.log(x);
-// let res="@"+name +name.length;
-// console.log(res);
-
-// let marks=[85,44,97,37,76,60];
-// let sum=0;
-// for (let i=0;i<marks.length;i++){
-//     sum =sum +marks[i];
-// }
-// let avg = sum/marks.length;
-// console.log('average value is ',avg);
-// for (let i in marks){
-//     console.log(marks[i]);
-// }
-
-// for (let i of arr){
-//         i=i-i*(10/100);
-//         console.log(i);
-//     }
-// let arr=[250,645,300,900,50];
-// let arr1=[1,2,4,5];
-// // arr.push(55);
-// // arr.pop(0);
-// let b=arr.concat(arr1);
-// console.log(b);
-
-
-// function print(a){
-//     let sum=a+a;
-//     return sum;
-// }
-// let s=print(5);
-// console.log(s);
-
-
-// arrow function 
-
-// const sum=(a,b) => {
-//     console.log(a+b);
-// }
-
-
-// let arr=[23,34,6,23,67,324,6];
-// let res=arr.reduce((prev,curr)=>{
-//     return (prev>curr)? prev:curr 
-// })
-// console.log(res);
-
-// let div=document.querySelector("div");
-// // console.dir(div);
-
-// div.style.backgroundColor="green";
-// div.style.textAlign="center";
-// div.style.fontSize="30px";
-
-
-// let element= document.createElement("button");
-// element.innerText="click me";
-// console.log(element);
-// let div=document.querySelector(".box");
-// div.before(element);
-// div.append(element);
-// div.prepend(element);
-// div.after(element);
-
-// let btn=document.createElement("button");
-// btn.innerText="click me!";
-// let b=document.querySelector("body");
-// b.prepend(btn);
-
-// btn.style.backgroundColor="red";
-// btn.style.color="blue";
-// btn.style.border="2px solid black";
-
-
-
-// let para=document.querySelector("p");
-// para.classList.add("newclass");
-
-
-// let b=document.querySelector(".btn");
-// b.onclick=()=> {
-//     console.log("clicked");
-// }
-// let d=document.querySelector(".box1");
-// d.onmouseover = (e) => {
-//     console.log(e.target);
-// }
-
-
-// let d2=document.querySelector(".box2");
-// d2.addEventListener("click", () =>{
-//     console.log("box2 clicked-handler1 ");
-// });
-// let handler2=() => {
-//     console.log("box2 clicked-handler2 ")
-// }
-// d2.addEventListener("click",handler2);
-// d2.addEventListener("click", () =>{
-//     console.log("box2 clicked-handler3 ");
-// });
-// d2.removeEventListener("click",handler2);
-
-
-let btn=document.querySelector("button");
+var boxes=document.querySelectorAll(".box");
+let resetBtn=document.querySelector(".reset");
 let body=document.querySelector("body");
-let currmode="light";
-btn.addEventListener("click", () =>{
-    if (currmode==="light"){
-        console.log(currmode);
-        body.classList.add("light");
-        body.classList.remove("dark");
-        currmode="dark";
+let win=document.querySelector(".win");
+let newgameBtn=document.querySelector(".newgame");
+let msgcontainer=document.querySelector(".msg-container");
+
+ 
+let turn =true;
+let winarr = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+];
+
+const boxDisabled =() => {
+    for (let box of boxes){
+        box.disabled=true;
+    }
+}
+
+
+const checkWinner= () => {
+    for (let pattern of winarr){
+        //console.log(pattern[0],pattern[1],pattern[2])
+        //console.log(boxes[pattern[0]],boxes[pattern[1]],boxes[pattern[2]])
+        // console.log(
+        //     boxes[pattern[0]].innerText,
+        //     boxes[pattern[1]].innerText,
+        //     boxes[pattern[2]].innerText
+        // )
+        let pos1Val=boxes[pattern[0]].innerText;
+        let pos2Val=boxes[pattern[1]].innerText;
+        let pos3Val=boxes[pattern[2]].innerText;
+
+        if (pos1Val!="",pos2Val!= "" ,pos3Val!= ""){
+            if (pos1Val==pos2Val && pos1Val==pos3Val){
+                // console.log("winner",pos1Val);
+                win.innerText=`Congratulations! ,Winner is ${pos1Val}`;
+                msgcontainer.classList.remove("hide");
+                boxDisabled();
+            }
+        }
+    }
+}
+
+const entry= (box)=> {
+    
+    if (turn==true){
+        box.innerText="X";
+        turn= false;
     }
     else{
-        console.log(currmode);
-        body.classList.add("dark");
-        body.classList.remove("light");
-        currmode="light";
+        box.innerText="O";
+        turn=true;
     }
+    box.disabled=true;
 
+    checkWinner();
+};
+boxes.forEach((box) => {
+    box.addEventListener("click", () =>{
+        // console.log("clicked");
+        entry(box);
+    });
 });
+
+const boxEnable =() => {
+    for (let box of boxes){
+        box.disabled=false;
+        box.innerText="";
+        msgcontainer.classList.add("hide");
+    }
+}
+
+const resetGame = () => {
+    turn=true;
+    boxEnable();
+}
+
+const newgame = () => {
+    turn=true;
+    boxEnable();
+}
+resetBtn.addEventListener("click",resetGame);
+newgameBtn.addEventListener("click",resetGame);
